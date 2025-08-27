@@ -9,7 +9,7 @@ function App() {
     try {
       const response = await axios.get('/get-products')
 
-      setProducts(response)
+      setProducts(response.data)
       console.log(response.data)
     } catch (error) {
       console.error("Error fetching products:", error)
