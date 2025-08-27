@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import axios from './api/axios.ts'
 
+
 function App() {
 
   const [products, setProducts] = useState([])
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('/get-products')
+      const data : any = await axios.get('/get-products')
 
-      setProducts(response.data)
-      console.log(response.data)
+      setProducts(data)
+
     } catch (error) {
       console.error("Error fetching products:", error)
     }
@@ -19,7 +20,7 @@ function App() {
  const handleFetchProducts = () => {
     fetchProducts()
  }
-  console.log(products)
+
 
 
 
